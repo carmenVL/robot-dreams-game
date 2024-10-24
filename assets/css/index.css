@@ -1,0 +1,304 @@
+/* Estilos generales */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    height: 100vh;
+    background: #584040;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* Estilos para la pantalla de inicio */
+
+#start-screen {
+
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#90d9fc;
+    z-index: 10;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+#start-btn {
+    padding: 10px 20px;
+    margin-top:10px;
+    font-size: 30px;
+    background-color: #000000;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    border: none;
+    border-radius:40px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#start-btn:hover {
+    background-color: #cd6d00;
+    transform: scale(1.1); 
+    transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+.reglas{
+    text-align:center;
+}
+
+.texto-intro{
+    color:#cd6d00;
+    font-size:40px;
+}
+
+/* Estilos fondo */
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    background: linear-gradient(#b7d6c7, transparent) #ffe2d1;
+    transition: background-color 1s linear;
+    overflow: hidden;
+}
+
+.mediodia {
+    background-color: #ffdcf3;
+}
+
+.tarde {
+    background-color: #ffadad;
+}
+
+.noche {
+    background-color: #aca8c7;
+}
+
+.feria{
+    width: 140%;
+    height: 110%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: url(../img/fondo.png);
+    background-size: 71.5% 100%;
+}
+
+.nube{
+    width: 192px;
+    height: 26px;
+    top:150px;
+
+    position: absolute;
+    z-index: 0;
+
+    background: url(../img/nube.png) no-repeat;
+    background-size: 192px 26px;
+}
+
+/* Estilos personaje principal */
+
+.dog {
+    width: 215px;
+    height: 241px;
+    position: absolute;
+    bottom: 22px;
+    left: 0 px;
+    z-index: 2;
+
+    background: url(../img/dog.png) repeat-x 0px 0px;
+    background-size: 638px 241px;
+    background-position-x: 0px;
+}
+
+.dog-corriendo {
+    left: 42px;
+    width:100px;
+    animation: animardog 0.55s steps(2) infinite;
+}
+.dog-estrellado {
+    background-position-x: -443px;
+    width: 195px;
+}
+
+@keyframes animardog{
+    from{
+        background-position-x: -229px;
+    }
+    to{
+        background-position-x: -450px;
+    }
+}
+
+/* Estilo suelo */
+
+.suelo {
+    width: 200%;
+    height: 102px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: url(../img/suelo.png) repeat-x 0px 0px;
+    background-size: 50% 102px;
+}
+
+/* Estilos obstáculos */
+
+.villano{
+    width: 200px;
+    height: 226px;
+
+    position: absolute;
+    bottom: 46px;
+    left: 600px;
+    z-index: 1;
+
+    background: url(../img/villano1.png) no-repeat;
+}
+.villano2{
+    width: 200px;
+    height: 163px;
+
+    background: url(../img/villano2.png) no-repeat;
+}
+
+.villano3 {
+    width: 210px;
+    height: 189px;
+    background: url(../img/villano3.png) no-repeat;
+}
+
+.villano4 {
+    width: 71px;
+    height: 250px;
+    background: url(../img/villano4.png) no-repeat;
+}
+
+/* Estilo Score */
+
+
+.score{
+    width: 215px;
+    height: 40px;
+
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 9;
+
+    color: #cd6d00;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Estilos Game Over */
+
+.game-over{
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #cd6d00;
+    font-size: 160px;
+    font-weight: 700;
+    z-index:2;
+    background-color: #00000057;
+}
+
+#restart-btn {
+    display: none;
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 30px;
+    background-color: #cd6d00;
+    color: white;
+    border: none;
+    border-radius:30px;
+    cursor: pointer;
+    z-index:2;
+}
+
+.title-game-over{
+    margin-top:-164px;
+}
+
+/* Estilos Win */
+
+#win-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #90dafcb4;
+    display: flex;
+    z-index:11;
+    align-content: center;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;     
+    flex-wrap: nowrap;  
+}
+
+.win-message img {
+    width: 200px;
+}
+
+.title-win {
+    font-size: 68px;
+    color: white;
+    margin-top: 20px;
+}
+
+.play-again-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #cd6d00;
+    border-radius:30px;
+    color:#fff;
+    border: 0;
+    z-index:11;
+}
