@@ -85,7 +85,7 @@ function MoverNubes() {
 
 function GanarPuntos() {
     score++;
-    textoScore.innerHTML = '<img src="assets/img/image-score.png" alt="icono" style="width: 43px; height: 70px; vertical-align: middle; margin-right: 5px;"> Score: ' + score;
+    textoScore.innerHTML = '<img src="../img/image-score.png" alt="icono" style="width: 43px; height: 70px; vertical-align: middle; margin-right: 5px;"> Score: ' + score;
     if(score === 5){
         gameVel = 1.5;
         contenedor.classList.add("mediodia");
